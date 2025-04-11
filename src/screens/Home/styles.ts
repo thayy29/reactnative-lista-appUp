@@ -3,49 +3,56 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
     backgroundColor: "#000",
+    padding: 10,
   },
 
-  title: {
-    color: "white",
+  eventName: {
+    color: "#F2FBEF",
     paddingTop: 10,
     fontSize: 20,
-    alignItems: "flex-start"
+    alignItems: "flex-start",
   },
 
-  secondaryText: {
-    color: "gray",
+  eventDate: {
+    color: "#525252",
     paddingTop: 1,
     fontSize: 16,
-    justifyContent: "flex-start"
+    marginTop: 5,
+    marginBottom: 10,
+    justifyContent: "flex-start",
   },
 
-  textInput : {
-    backgroundColor: "#2f2f33",
-    marginTop: 12,
-    color: "#ffffff",
+  input: {
+    flex: 1,
+    backgroundColor: "#191919",
+    color: "#F2FBEF",
     padding: 16,
     fontSize: 16,
     borderRadius: 10,
-    outlineColor: "#2f2f33",
+    height: 56,
+    marginRight: 12,
   },
 
-  btnText: {
-    backgroundColor: "#76e070",
-    width: 50,
-    height: 50,
+  button: {
+    backgroundColor: "#E63946",
+    width: 56,
+    height: 56,
     padding: 20,
-    marginTop: 5,
-    borderRadius: 10,
-    fontSize:  16,
-    justifyContent: "center"
-  },
-  box: {
-    flexDirection: "row-reverse",
-    justifyContent: "space-around",
+    borderRadius: 5,
     alignItems: "center",
-  }
+    justifyContent: "center",
+    fontSize: 16,
+  },
 
+  form: {
+    flexDirection: "row",
+    width: "100%",
+  },
+
+  icon: {
+    color: "#ffffff",
+  },
 });

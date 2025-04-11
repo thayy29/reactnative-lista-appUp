@@ -1,27 +1,42 @@
 import React from "react";
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import { styles } from "./styles";
+import Participant from "../../../components/Participant";
 
 export default function Home() {
-   
   const handleOnPress = () => {
-    console.log("Adicionou!")
-  }
+    console.log("Adicionou!");
+  };
+
+  const handleRemoveParticipant = (name: string) => {
+    console.log("Removeu!");
+  };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>This is my App</Text>
-      <Text style={styles.secondaryText}>Adicione um participante!</Text>
-      <View style={styles.box}>
-        <TextInput
-        placeholder="Escreva o nome de um participante"
-        style={styles.textInput}
-        />
+      <Text style={styles.eventName}>Nome do evento</Text>
+      <Text style={styles.eventDate}>Sexta, 11 de Abril de 2025</Text>
 
-        <TouchableOpacity style={styles.btnText} onPress={handleOnPress}>
-            <Text>+</Text>
-          </TouchableOpacity>
+      <View style={styles.form}>
+        <TextInput
+          placeholder="Nome do participante"
+          placeholderTextColor={"#525252"}
+          style={styles.input}
+        />
+        <TouchableOpacity style={styles.button} onPress={handleOnPress}>
+          <Text style={styles.icon}>+</Text>
+        </TouchableOpacity>
       </View>
+      <Participant
+        name="Thayana"
+        onRemove={() => handleRemoveParticipant("Thayana")}
+      />
     </View>
   );
 }
