@@ -55,4 +55,8 @@ export const styles = StyleSheet.create({
   icon: {
     color: "#ffffff",
   },
+
+  emptyListText: {
+    color: "#ffffff",
+  },
 });
