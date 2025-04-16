@@ -58,5 +58,11 @@ export const styles = StyleSheet.create({
 
   emptyListText: {
     color: "#ffffff",
+    fontSize: 14,
+    textAlign: "center",
+
+    margin: 20,
+    lineHeight: 20,
+    // backgroundColor: "#ffffff",
   },
 });

@@ -12,27 +12,19 @@ import { styles } from "./styles";
 import Participant from "../../../components/Participant";
 
 export default function Home() {
-  const participants = [
-    "Thayana",
-    "Ana",
-    "João",
-    "Maria",
-    "Pedro",
-    "Mariana",
-    "Lucia",
-    "Patricia",
-    "Marcos",
-  ];
+  const [participants, setParticipants] = React.useState<string[]>([]);
+  const [participantName, setParticipantName] = React.useState("");
 
-  function handleParticipanAdd() {
-    if (participants.includes("Thayana")) {
+  function handleParticipantAdd() {
+    if (participants.includes(participantName)) {
       return Alert.alert(
         "Participante já existe",
-        "Já existe um participante na lista com esse nome."
+        "Já existe um participante com esse nome"
       );
     }
 
-    console.log("adicionou");
+    setParticipants((prevState) => [...prevState, participantName]);
+    setParticipantName("");
   }
 
   function handleRemoveParticipant(name: string) {
@@ -50,7 +42,7 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
-      <StatusBar translucent style="dark" />
+      <StatusBar translucent style="dark" backgroundColor="transparent" />
       <Text style={styles.eventName}>Nome do evento</Text>
       <Text style={styles.eventDate}>Sexta, 11 de Abril de 2025</Text>
 
@@ -59,8 +51,10 @@ export default function Home() {
           placeholder="Nome do participante"
           placeholderTextColor={"#525252"}
           style={styles.input}
+          onChangeText={setParticipantName}
+          value={participantName}
         />
-        <TouchableOpacity style={styles.button} onPress={handleParticipanAdd}>
+        <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
           <Text style={styles.icon}>+</Text>
         </TouchableOpacity>
       </View>
