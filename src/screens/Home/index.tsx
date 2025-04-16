@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { styles } from "./styles";
-import Participant from "../../../components/Participant";
+import Participant from "../../components/Participant";
 
 export default function Home() {
   const [participants, setParticipants] = React.useState<string[]>([]);
