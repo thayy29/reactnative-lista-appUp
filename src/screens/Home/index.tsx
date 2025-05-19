@@ -27,11 +27,11 @@ export default function Home() {
     setParticipantName("");
   }
 
-  function handleRemoveParticipant(name: string) {
+  function handleRemoveParticipant(name: string) {  
     Alert.alert("Remover", `Remover o participante ${name}?`, [
       {
         text: "Sim",
-        onPress: () => console.log("Deletado!"),
+        onPress: () => setParticipants(prevState => prevState.filter(participant => participant !== name)),
       },
       {
         text: "Não",
